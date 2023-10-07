@@ -1,0 +1,19 @@
+id,name,address,hours
+1,Birmingham New Street,"Station Street, Birmingham, B2 4QA",09:00-17:00
+2,Bristol Temple Meads,"Station Approach, Bristol, BS1 6QF",09:00-17:00
+3,Clapham Junction,"St John's Hill, Clapham, Greater London, SW11 2QP",09:00-17:00
+4,Guildford,"Station Approach, Guildford, GU1 4UT",09:00-17:00
+5,Leeds City,"New Station Street, Leeds, LS1 4DY",08:00-20:30
+6,Liverpool Lime Street,"Lime Street, Liverpool, L1 1JD",09:00-17:30
+7,London Bridge,"Tooley Street, London, SE1 3QX",08:00-16:30
+8,London Cannon Street,"Cannon Street, London, EC4N 6AP",09:00-17:30
+9,London Charing Cross,"The Strand, London, WC2N 5HF",08:00-18:30
+10,London Euston,"Euston Road, London, NW1 2RT",09:00-17:30
+11,London Kings Cross,"Euston Road, London, N1 9AL",09:00-17:30
+12,London Liverpool Street,"Bishopsgate, London, EC2M 7PY",08:00-16:30
+13,London Paddington,"Praed Street, London, W2 1HQ",09:00-17:30
+14,London St Pancras International,"Pancras Road, London, N1C 4QP",09:00-17:00
+15,London Victoria,"Victoria Street, London, SW1V 1JU",08:30-17:30
+16,London Waterloo,"Station Approach, London, SE1 8SW",08:00-20:30
+17,Manchester Piccadilly,"Piccadilly Station Approach, Manchester, M60 7RA",09:00-17:30
+18,Reading,"Station Hill, Reading, RG1 1LZ",07:00-17:30

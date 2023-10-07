@@ -1,0 +1,19 @@
+id,name,address,hours,location/0,location/1
+1,Birmingham New Street,"Station Street, Birmingham, B2 4QA",09:00-17:00,-1.89967,52.47647
+7,London Bridge,"Tooley Street, London, SE1 3QX",08:00-16:30,-0.08765,51.50606
+8,London Cannon Street,"Cannon Street, London, EC4N 6AP",09:00-17:30,-0.08985,51.51153
+10,London Euston,"Euston Road, London, NW1 2RT",09:00-17:30,-0.13215,51.52693
+3,Clapham Junction,"St John's Hill, Clapham, Greater London, SW11 2QP",09:00-17:00,-0.17154,51.46524
+2,Bristol Temple Meads,"Station Approach, Bristol, BS1 6QF",09:00-17:00,-2.581166,51.449434
+14,London St Pancras International,"Pancras Road, London, N1C 4QP",09:00-17:00,-0.12722,51.53146
+18,Reading,"Station Hill, Reading, RG1 1LZ",07:00-17:30,-0.97485,51.45869
+12,London Liverpool Street,"Bishopsgate, London, EC2M 7PY",08:00-16:30,-0.0807,51.51721
+9,London Charing Cross,"The Strand, London, WC2N 5HF",08:00-18:30,-0.12559,51.50855
+4,Guildford,"Station Approach, Guildford, GU1 4UT",09:00-17:00,-0.57996,51.2376
+13,London Paddington,"Praed Street, London, W2 1HQ",09:00-17:30,-0.17898,51.51879
+16,London Waterloo,"Station Approach, London, SE1 8SW",08:00-20:30,-0.11532,51.50078
+17,Manchester Piccadilly,"Piccadilly Station Approach, Manchester, M60 7RA",09:00-17:30,-2.23182,53.47714
+6,Liverpool Lime Street,"Lime Street, Liverpool, L1 1JD",09:00-17:30,-2.97893,53.40845
+5,Leeds City,"New Station Street, Leeds, LS1 4DY",08:00-20:30,-1.54714,53.79523
+15,London Victoria,"Victoria Street, London, SW1V 1JU",08:30-17:30,-0.14208,51.49552
+11,London Kings Cross,"Euston Road, London, N1 9AL",09:00-17:30,-0.12301,51.53044

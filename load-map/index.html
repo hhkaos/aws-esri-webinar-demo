@@ -1,64 +1,24 @@
 <html>
 <head>
   <link href="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.css" rel="stylesheet" />
-  <style>
-    body { margin: 0; }
-    #map { height: 100vh; }
-    #styleSelector{ position: absolute; top: 10; right: 10; z-index: 9999; padding: 1rem}
-    #codeSnippet{ position: absolute; bottom: 10; right: 10; z-index: 9999; opacity: .8; font-size: 1.1rem;}
-    select{
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      padding: 5px;
-    }
-
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+  <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-
-  <div id="styleSelector">
-    <select id="mapStyle">
-      <option value="EsriLight">Esri Light</option>
-      <option value="EsriNavigation">Esri Navigation</option>
-      <option value="EsriLightGrayCanvas">Esri Light Gray Canvas</option>
-      <option value="EsriDarkGrayCanvas">Esri Dark Gray Canvas</option>
-      <option value="EsriImagery">Esri Imagery</option>
-      <option value="EsriStreetMap">Esri Street Map</option>
-    </select>
-  </div>
-  <div id="codeSnippet">
-    <pre><code class="language-javascript hljs">
-    const apiKey = "YOUR_API_KEY";
-    const region = "YOUR_REGION"; 
-    const mapName = "EsriLight"; // Default
-    const regionUrl = `https://maps.geo.${region}.amazonaws.com/maps/v0/maps/`;
-    // Initialize the map
-    const map = new maplibregl.Map({
-      container: "map",
-      style: `${regionUrl}/${mapName}/style-descriptor?key=${apiKey}`,
-      center: [-0.125497, 51.508525],
-      zoom: 5,
-    });
-    </code></pre>
-  </div>
+  
   <!-- Map container -->
   <div id="map" />
+
   <!-- JavaScript dependencies -->
   <script src="https://unpkg.com/maplibre-gl@1.14.0/dist/maplibre-gl.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
 
   
   <script type="module">
-
-    import { parse } from './js/vanillaes_csv_main_index.min.js'
-    import hljs from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js';
-    hljs.highlightAll();
-
-    const apiKey = "v1.public.eyJqdGkiOiIwMDg4YzdmYS0xYTJiLTQ1YzQtYTIyYy1mM2M0MThiZTcwNzMifUZPfKHoigrt6FIY6y8U1nf3yO2Wb3axa3sEKfG-O7ew21rRBk1Z-qMI5u9rkZ1zdvLJOpq-kdKARUGbyjuAgZ6UtyOExfOL1Sdj1jEIaKR-ulHJH09eeRmMhMlCgb8zkZwLMWbJzCNhXJgaKbXrOnLFEiJPGHqP8etvmeYwbSyPKZK7OQWS4t_BSA40mDsaDfx0VL9qOTe0W36OSJuwo_Eb2UQUfFQajuVX8ysaWbL9DtWT7B9Md-iZM-5cxhNZW0j-OWJJXrz2yKLGLeSdjGFNHAlitvBwoC7fKpIi2uIrVnEPcxTaRVGg-LERIwhcwEev1jVN9GjhszsyuwMCCdI.ZWU0ZWIzMTktMWRhNi00Mzg0LTllMzYtNzlmMDU3MjRmYTkx"; // API key
-    const region = "us-east-1"; // Region
+    const apiKey = "v1.public.eyJqdGkiOiIwMDg4YzdmYS0xYTJiLTQ1YzQtYTIyYy1mM2M0MThiZTcwNzMifUZPfKHoigrt6FIY6y8U1nf3yO2Wb3axa3sEKfG-O7ew21rRBk1Z-qMI5u9rkZ1zdvLJOpq-kdKARUGbyjuAgZ6UtyOExfOL1Sdj1jEIaKR-ulHJH09eeRmMhMlCgb8zkZwLMWbJzCNhXJgaKbXrOnLFEiJPGHqP8etvmeYwbSyPKZK7OQWS4t_BSA40mDsaDfx0VL9qOTe0W36OSJuwo_Eb2UQUfFQajuVX8ysaWbL9DtWT7B9Md-iZM-5cxhNZW0j-OWJJXrz2yKLGLeSdjGFNHAlitvBwoC7fKpIi2uIrVnEPcxTaRVGg-LERIwhcwEev1jVN9GjhszsyuwMCCdI.ZWU0ZWIzMTktMWRhNi00Mzg0LTllMzYtNzlmMDU3MjRmYTkx";
+    const region = "us-east-1"; 
     const mapName = "EsriLight"; 
     const regionUrl = `https://maps.geo.${region}.amazonaws.com/maps/v0/maps`;
+    
     // Initialize the map
     const map = new maplibregl.Map({
       container: "map",
@@ -66,14 +26,19 @@
       center: [-0.125497, 51.508525],
       zoom: 5,
     });
+
     map.addControl(new maplibregl.NavigationControl(), "top-left");
     
+    // Load stores from CSV and draw markers
+    import { parse } from './js/vanillaes_csv_main_index.min.js'
     fetch("../data/stores/uk_stores_with_coordinates.csv")
-      .then((response) => response.text()) // Get the CSV text
+      .then((response) => response.text()) 
       .then((csvText) => {
         const csv = parse(csvText);
         csv.slice(1).forEach(element => {
-          const marker = new maplibregl.Marker()
+          const marker = new maplibregl.Marker({ 
+              color: "#FF0000"
+            })
             .setLngLat([element[4], element[5]])
             .addTo(map);
         });
@@ -82,21 +47,52 @@
         console.error("Error fetching or parsing CSV:", error);
       });
 
-      map.on("load", function () {
-        document.getElementById("mapStyle").addEventListener("change", function (event) {
-          const mapName = event.target.value;
-          switch(mapName){
-            case 'EsriImagery':
-            case 'EsriDarkGrayCanvas':
-            case 'EsriStreetMap':
-            map.setStyle(`https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=v1.public.eyJqdGkiOiJiN2U5OWU4ZC02M2M3LTRhNzAtYjMwYS03ODE0ZTZiYjcwMWQifVms5D7-gCz7ZWr7g7riGLcF37K7yfRlCVMVRjZMag-6Cia4miM4GsXcBZlAgKV3KN3bJjxN5GZ4YPUoXlg7ETzV-9GImwBECMTDApl0D-Rig8Pz5mIiRJGdACi0Eis9pLHHJizixGGqZED9rP43DxxW4mA0xpDMwbKCQgBdV6KVRorNKPTXteqwIA0sefabpjKoQSM2lzsSNzeTMWwE3egUhZrSnXkSpHbnB6q43qHAkFKtbHCDinyc_PUBGxB4mVnC4N6Ne0YUl7CiPMEYj0EvGQIszufb--K465x_RR5PDjuwagH2anKygqov3rrtm5YuYCsHhMZkUSen9IhtPGg.ZWU0ZWIzMTktMWRhNi00Mzg0LTllMzYtNzlmMDU3MjRmYTkx`);  
-            break;
-            default:
-              map.setStyle(`https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=${apiKey}`);
-          }
-          
-        });
+    // Map style switcher logic
+    map.on("load", function () {
+      document.getElementById("mapStyle").addEventListener("change", function (event) {
+        const mapName = event.target.value;
+        switch(mapName){
+          case 'EsriImagery':
+          case 'EsriDarkGrayCanvas':
+          case 'EsriStreetMap':
+          map.setStyle(`https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=v1.public.eyJqdGkiOiJiN2U5OWU4ZC02M2M3LTRhNzAtYjMwYS03ODE0ZTZiYjcwMWQifVms5D7-gCz7ZWr7g7riGLcF37K7yfRlCVMVRjZMag-6Cia4miM4GsXcBZlAgKV3KN3bJjxN5GZ4YPUoXlg7ETzV-9GImwBECMTDApl0D-Rig8Pz5mIiRJGdACi0Eis9pLHHJizixGGqZED9rP43DxxW4mA0xpDMwbKCQgBdV6KVRorNKPTXteqwIA0sefabpjKoQSM2lzsSNzeTMWwE3egUhZrSnXkSpHbnB6q43qHAkFKtbHCDinyc_PUBGxB4mVnC4N6Ne0YUl7CiPMEYj0EvGQIszufb--K465x_RR5PDjuwagH2anKygqov3rrtm5YuYCsHhMZkUSen9IhtPGg.ZWU0ZWIzMTktMWRhNi00Mzg0LTllMzYtNzlmMDU3MjRmYTkx`);  
+          break;
+          default:
+            map.setStyle(`https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=${apiKey}`);
+        }
       });
+    });
+
+    import hljs from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/es/highlight.min.js';
+    hljs.highlightAll();
   </script>
+
+<div id="styleSelector">
+  <select id="mapStyle">
+    <option value="EsriLight">Esri Light</option>
+    <option value="EsriNavigation">Esri Navigation</option>
+    <option value="EsriLightGrayCanvas">Esri Light Gray Canvas</option>
+    <option value="EsriDarkGrayCanvas">Esri Dark Gray Canvas</option>
+    <option value="EsriImagery">Esri Imagery</option>
+    <option value="EsriStreetMap">Esri Street Map</option>
+  </select>
+</div>
+
+<div id="codeSnippet">
+  <pre><code class="language-javascript hljs">
+  const apiKey = "YOUR_API_KEY";
+  const region = "YOUR_REGION"; 
+  const mapName = "EsriLight"; // Default
+  const regionUrl = `https://maps.geo.${region}.amazonaws.com/maps/v0/maps/`;
+  
+  // Initialize the map
+  const map = new maplibregl.Map({
+    container: "map",
+    style: `${regionUrl}/${mapName}/style-descriptor?key=${apiKey}`,
+    center: [-0.125497, 51.508525],
+    zoom: 5,
+  });
+  </code></pre>
+</div>
 </body>
 </html>

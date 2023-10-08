@@ -1,0 +1,10 @@
+body { margin: 0; }
+#map { height: 100vh; }
+#styleSelector{ position: absolute; top: 10; right: 10; z-index: 9999; padding: 1rem}
+#codeSnippet{ position: absolute; bottom: 10; right: 10; z-index: 9999; opacity: .8; font-size: 1.1rem;}
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px;
+}

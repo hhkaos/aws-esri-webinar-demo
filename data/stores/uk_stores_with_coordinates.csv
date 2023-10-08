@@ -1,0 +1,19 @@
+id,name,address,hours,longitude,latitude
+1,Birmingham New Street,"Station Street, Birmingham, B2 4QA",09:00-17:00,-1.897900002961,52.477159980907
+2,Bristol Temple Meads,"Station Approach, Bristol, BS1 6QF",09:00-17:00,-2.583003846773,51.448783907766
+3,Clapham Junction,"St John's Hill, Clapham, Greater London, SW11 2QP",09:00-17:00,-0.169860022222,51.463619997475
+4,Guildford,"Station Approach, Guildford, GU1 4UT",09:00-17:00,-0.565452200312,51.240223266611
+5,Leeds City,"New Station Street, Leeds, LS1 4DY",08:00-20:30,-1.54675119936,53.795010905595
+6,Liverpool Lime Street,"Lime Street, Liverpool, L1 1JD",09:00-17:30,-2.979140942791,53.406507913708
+7,London Bridge,"Tooley Street, London, SE1 3QX",08:00-16:30,-0.085979970212,51.503960001983
+8,London Cannon Street,"Cannon Street, London, EC4N 6AP",09:00-17:30,-0.088112832385,51.511199101651
+9,London Charing Cross,"The Strand, London, WC2N 5HF",08:00-18:30,-0.125497431872,51.508524845703
+10,London Euston,"Euston Road, London, NW1 2RT",09:00-17:30,-0.134224371636,51.526194853955
+11,London Kings Cross,"Euston Road, London, N1 9AL",09:00-17:30,-0.123195845726,51.530367545945
+12,London Liverpool Street,"Bishopsgate, London, EC2M 7PY",08:00-16:30,-0.082299979442,51.518560020029
+13,London Paddington,"Praed Street, London, W2 1HQ",09:00-17:30,-0.172680194709,51.517219786578
+14,London St Pancras International,"Pancras Road, London, N1C 4QP",09:00-17:00,-0.125936509891,51.53253755719
+15,London Victoria,"Victoria Street, London, SW1V 1JU",08:30-17:30,-0.142520295272,51.49654998048
+16,London Waterloo,"Station Approach, London, SE1 8SW",08:00-20:30,-0.111724276452,51.503333686542
+17,Manchester Piccadilly,"Piccadilly Station Approach, Manchester, M60 7RA",09:00-17:30,-2.23217,53.47903
+18,Reading,"Station Hill, Reading, RG1 1LZ",07:00-17:30,-0.973355142541,51.458565323337
